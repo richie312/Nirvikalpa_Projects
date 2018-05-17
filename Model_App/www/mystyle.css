@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+
+h1 {
+  font-family: 'sans-serif', normal;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #154205;
+}
+
+h2 {
+  font-family: 'sans-serif', normal;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #154205;
+}
+h6 {
+  font-family: 'sans-serif', normal;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #154205;
+}
+
+body {
+  
+  background-image: url("ds.png");
+  background-position: right-top;
+}
