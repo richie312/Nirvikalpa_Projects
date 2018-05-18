@@ -8,7 +8,6 @@ library(randomForest)
 library(RColorBrewer)
 library(ggplot2)
 library(ipred)
-library(rattle)
 library(caret)
 library(ROCR)
 library(dplyr)
@@ -313,7 +312,7 @@ server<- shinyServer(function(input,output){
     
     if(input$Model == "Decision Tree"){
       par(bg="#E8F6F3")
-      fancyRpartPlot({event_fit()}, cex = 0.9)
+      rpart.plot({event_fit()}, cex = 0.9)
     }
     
     if(input$Model == "Random Forest"){
