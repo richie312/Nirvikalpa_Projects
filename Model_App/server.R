@@ -8,6 +8,7 @@ library(randomForest)
 library(RColorBrewer)
 library(ggplot2)
 library(ipred)
+library(rattle)
 library(caret)
 library(ROCR)
 library(dplyr)
@@ -23,8 +24,7 @@ library(corrplot)
 
 
 
-
-shinyServer(function(input,output){
+server<- shinyServer(function(input,output){
   
   ## Set the seed
   
@@ -313,7 +313,7 @@ shinyServer(function(input,output){
     
     if(input$Model == "Decision Tree"){
       par(bg="#E8F6F3")
-      rpart.plot({event_fit()}, cex = 0.9)
+      fancyRpartPlot({event_fit()}, cex = 0.9)
     }
     
     if(input$Model == "Random Forest"){
@@ -383,14 +383,13 @@ shinyServer(function(input,output){
       if(input$Model == "Logistic Regression"){
         ("The data table cannot be generated as it is a list. Please do not worry, the predict list has been computed")
       }
-      else{
-        return()
-      }
+      
+      
     }
   })
   
   output$List<-renderDataTable({
-    if(input$Model == "Random Forest"){
+    if(input$Model == "Logistic Regression"){
       return()
     }
     else{

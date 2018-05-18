@@ -4,25 +4,35 @@ h1 {
   font-family: 'sans-serif', normal;
   font-weight: 900;
   line-height: 1.1;
-  color: #154205;
+  color: #FF7D33;
 }
-
 h2 {
   font-family: 'sans-serif', normal;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.1;
-  color: #154205;
+  color: #FF7D33;
+}
+h3 {
+  font-family: 'sans-serif', normal;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #FF7D33;
+}
+h5 {
+  font-family: 'sans-serif', normal;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #FF7D33;
 }
 h6 {
   font-family: 'sans-serif', normal;
   font-weight: 500;
   line-height: 1.1;
-  color: #154205;
+  color: #FF7D33;
 }
-
 body{
-  background-color: "##EBDEF0";
-  background-image: url("ds.png");
+  
+  background-image: url("ds1.png");
   background-position: top-right;
  
 }

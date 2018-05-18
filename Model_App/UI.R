@@ -36,7 +36,8 @@ shinyUI(fluidPage(
              
              sidebarLayout( 
                
-               sidebarPanel( includeCSS("mystyle.css"),style="color: #EAF2F8", 
+               sidebarPanel( includeCSS("mystyle.css"), style = "color: #FF7D33;",
+                             
                              fileInput(inputId = "file",label = "File", buttonLabel="Upload",
                                        accept = c(
                                          "text/csv",
@@ -63,14 +64,14 @@ shinyUI(fluidPage(
                
                
                
-               mainPanel( style = "color: #1C2833;
-                          font-weight: 500;",
+               mainPanel( style ="color: #FF7D33;
+                          font-weight: 900;",
                           
                           DTOutput("table"),
                           tags$hr(),
                           h4(helpText("The App is preloaded with German Credit
                                       <https://github.com/richie312/Data_Camp_Tutorials_R/blob/master/ML_Tree_App/New%20folder/train.csv>, 
-                                      You can choose your own dataset as well.", style="color: #1C2833;
+                                      You can choose your own dataset as well.", style ="color: #FF7D33;
                                       font-weight: 900;")),
                           br(), br(),
                           
@@ -83,14 +84,14 @@ shinyUI(fluidPage(
                           )
                ),
     
-    tabPanel("Data Modelling", value = "Model",style="color: #FF7D33",
+    tabPanel("Data Modelling", value = "Model",
              
              (titlePanel("Pre-Processing and Modelling")),
              
              
              sidebarLayout(
                
-               sidebarPanel( titlePanel("Missing Values"),
+               sidebarPanel( titlePanel("Missing Values"),includeCSS("mystyle.css"),style = "color: #FF7D33;",
                              tags$hr(),
                              h5(helpText("Select the Appropriate Missing Imputation criterion")),
                              br(),
@@ -130,43 +131,44 @@ shinyUI(fluidPage(
                
                
                
-               mainPanel(tabsetPanel(
-                 tabPanel("PreProcess_Tables", value ="PreProcess",
-                          DTOutput("table_Imputation"),
-                          br(),br(),
-                          textOutput("Text_train"),
-                          textOutput("obs_train"),
-                          textOutput("Text_test"),
-                          textOutput("obs_test")
-                          
-                 ),
-                 tabPanel("Model_Summary", value = "Summary",
-                          verbatimTextOutput("model")
-                          
-                 ),
-                 tabPanel("Plot", value="Model_Plot",
-                          
-                          plotOutput("Model_Plot"),
-                          br(),br(),
-                          plotOutput("plot_cptable")
-                          
-                          
-                          
-                 )
-                 
+               mainPanel(style ="color: #FF7D33;
+                         font-weight: 900;",tabsetPanel(
+                           tabPanel("PreProcess_Tables", value ="PreProcess",
+                                    DTOutput("table_Imputation"),
+                                    br(),br(),
+                                    textOutput("Text_train"),
+                                    textOutput("obs_train"),
+                                    textOutput("Text_test"),
+                                    textOutput("obs_test")
+                                    
+                           ),
+                           tabPanel("Model_Summary", value = "Summary",
+                                    verbatimTextOutput("model")
+                                    
+                           ),
+                           tabPanel("Plot", value="Model_Plot",
+                                    
+                                    plotOutput("Model_Plot"),
+                                    br(),br(),
+                                    plotOutput("plot_cptable")
+                                    
+                                    
+                                    
+                           )
+                           
                )
                
-               )
+             )
              )
              
     ),
-    tabPanel("ROC & Confusion Matrix", value ="ROC", style="color: #FF7D33",
+    tabPanel("ROC & Confusion Matrix", value ="ROC",
              (titlePanel("ROC & Confusion Matrix")),
              
              
              sidebarLayout(
                
-               sidebarPanel( titlePanel("Confusion Matrix"),
+               sidebarPanel( titlePanel("Confusion Matrix"),includeCSS("mystyle.css"),style = "color: #FF7D33;",
                              tags$hr(),
                              h5(helpText("Generate the prediction list for each model")),
                              actionButton(inputId = "Predict_List", label = "Predict_List"),
@@ -185,32 +187,33 @@ shinyUI(fluidPage(
                
                
                
-               mainPanel(tabsetPanel(
-                 tabPanel("ROC & AUC", value ="ROC", 
-                          tags$style(type = "text/css", '.tab-panel{backgroud-colour: brown;}'),
-                          textOutput("text_predict"),
-                          textOutput("Logistic_Text"),
-                          DTOutput("List"),
-                          br(), br(),
-                          textOutput("text_auc"),
-                          textOutput("AUC"),
-                          br(),br(),
-                          plotOutput("ROC_Plot")
-                          
-                          
-                 ),
-                 tabPanel("ConfusionMatrix", value = "Matrix",style="color: #FF7D33",
-                          
-                          plotOutput("Matrix_table"),
-                          br(),br(),
-                          plotOutput("Result")
-                          
-                          
-                 )
-                 
+               mainPanel(style ="color: #FF7D33;
+                         font-weight: 900;",tabsetPanel(
+                           tabPanel("ROC & AUC", value ="ROC", 
+                                    
+                                    textOutput("text_predict"),
+                                    textOutput("Logistic_Text"),
+                                    DTOutput("List"),
+                                    br(), br(),
+                                    textOutput("text_auc"),
+                                    textOutput("AUC"),
+                                    br(),br(),
+                                    plotOutput("ROC_Plot")
+                                    
+                                    
+                           ),
+                           tabPanel("ConfusionMatrix", value = "Matrix",
+                                    
+                                    plotOutput("Matrix_table"),
+                                    br(),br(),
+                                    plotOutput("Result")
+                                    
+                                    
+                           )
+                           
                )
                
-               )
+             )
              )    
     ) 
     
