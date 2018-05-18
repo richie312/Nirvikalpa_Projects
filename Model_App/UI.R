@@ -38,6 +38,8 @@ shinyUI(fluidPage(
                
                sidebarPanel( includeCSS("mystyle.css"), style = "color: #FF7D33;",
                              
+                             
+                             
                              fileInput(inputId = "file",label = "File", buttonLabel="Upload",
                                        accept = c(
                                          "text/csv",
@@ -66,6 +68,8 @@ shinyUI(fluidPage(
                
                mainPanel( style ="color: #FF7D33;
                           font-weight: 900;",
+                            
+                          HTML('<iframe width="560" height="315" src="https://www.youtube.com/embed/O3mz66g9sGE?start=0.05" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'),
                           
                           DTOutput("table"),
                           tags$hr(),
@@ -140,6 +144,7 @@ shinyUI(fluidPage(
                                     textOutput("obs_train"),
                                     textOutput("Text_test"),
                                     textOutput("obs_test")
+                                    
                                     
                            ),
                            tabPanel("Model_Summary", value = "Summary",
